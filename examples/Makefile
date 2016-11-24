@@ -18,18 +18,14 @@ CCFLAGS=-Ofast -mfpu=vfp -mfloat-abi=hard -march=armv6zk -mtune=arm1176jzf-s
 #CCFLAGS=
 
 # define all programs
-#PROGRAMS = scanner pingtest gettingstarted
-#PROGRAMS = gettingstarted gettingstarted_call_response transfer pingpair_dyn
-# PROGRAMS = rf_trans rf_recv
-PROGRAMS = rf_recv rf_trans 
+PROGRAMS = rf_recv rf_trans
 
-SOURCES = ${PROGRAMS:=.c}
+SOURCES = ${PROGRAMS:=.cpp}
 
 all: ${PROGRAMS}
 
 ${PROGRAMS}: ${SOURCES}
-	gcc ${CCFLAGS} -Wall -I../ -lrf24-bcm $@.c -o $@
-
+	g++ ${CCFLAGS} -Wall -I../ -lrf24-bcm $@.cpp -o $@
 
 clean:
 	rm -rf $(PROGRAMS)

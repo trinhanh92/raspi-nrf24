@@ -14,7 +14,7 @@ using namespace std;
 RF24 radio(RPI_V2_GPIO_P1_15, BCM2835_SPI_CS0, BCM2835_SPI_SPEED_1MHZ);
 
 const uint64_t addresses_trans = 0x0102030405LL;
-const uint64_t addresses_recv  = 0x0102030405LL;
+const uint64_t addresses_recv  = 0x0504030201LL;
  
 // init counter
 unsigned long count = 0;

@@ -32,16 +32,16 @@ CCFLAGS=-Ofast -mfpu=vfp -mfloat-abi=hard -march=armv6zk -mtune=arm1176jzf-s
 all: librf24-bcm
 
 # Make the library
-# librf24-bcm: RF24.o bcm2835.o 
-# 	g++ -shared -Wl,-soname,$@.so.1 ${CCFLAGS} -o ${LIBNAME} $^
-librf24-bcm: nrf24.o bcm2835.o 
-	gcc -shared -Wl,-soname,$@.so.1 ${CCFLAGS} -o ${LIBNAME} $^
+librf24-bcm: RF24.o bcm2835.o 
+	g++ -shared -Wl,-soname,$@.so.1 ${CCFLAGS} -o ${LIBNAME} $^
+# librf24-bcm: nrf24.o bcm2835.o 
+	# gcc -shared -Wl,-soname,$@.so.1 ${CCFLAGS} -o ${LIBNAME} $^
 	
 # Library parts
-# RF24.o: RF24.cpp
-# 	g++ -Wall -fPIC ${CCFLAGS} -c $^
-nrf24.o: nrf24.c
-	gcc -Wall -fPIC ${CCFLAGS} -c $^
+RF24.o: RF24.cpp
+	g++ -Wall -fPIC ${CCFLAGS} -c $^
+# nrf24.o: nrf24.c
+	# gcc -Wall -fPIC ${CCFLAGS} -c $^
 
 bcm2835.o: bcm2835.c
 	gcc -Wall -fPIC ${CCFLAGS} -c $^
