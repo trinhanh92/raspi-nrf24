@@ -10,7 +10,7 @@ sudo ldconfig -v | grep librf librf24.so.1 -> librf24.so.1.0
 ```
 ## Run examples
 ```sh
-cd example_C/
+cd examples/
 make
 sudo ./rf_recv     <-- for receiver
 or
