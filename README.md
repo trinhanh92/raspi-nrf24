@@ -1,5 +1,5 @@
 # raspi-nrf24
-NRF24L01 C Library for Raspberry
+NRF24L01 CPP Library for Raspberry
 
 ## Install library
 ```sh
